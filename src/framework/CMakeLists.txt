@@ -339,6 +339,8 @@ if(FRAMEWORK_GRAPHICS)
             set(framework_SOURCES ${framework_SOURCES}
                 ${CMAKE_CURRENT_LIST_DIR}/graphics/dx/painterdx9.cpp
                 ${CMAKE_CURRENT_LIST_DIR}/graphics/dx/painterdx9.h
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/dx/graphicscontextdx9.cpp
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/dx/graphicscontextdx9.h
             )
         endif()
 
@@ -361,11 +363,15 @@ if(FRAMEWORK_GRAPHICS)
     else()
         if(WIN32)
             set(framework_SOURCES ${framework_SOURCES}
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/ogl/graphicscontextwgl.cpp
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/ogl/graphicscontextwgl.h
                 ${CMAKE_CURRENT_LIST_DIR}/platform/win32window.cpp
                 ${CMAKE_CURRENT_LIST_DIR}/platform/win32window.h
             )
         else()
             set(framework_SOURCES ${framework_SOURCES}
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/ogl/graphicscontextglx.cpp
+                ${CMAKE_CURRENT_LIST_DIR}/graphics/ogl/graphicscontextglx.h
                 ${CMAKE_CURRENT_LIST_DIR}/platform/x11window.cpp
                 ${CMAKE_CURRENT_LIST_DIR}/platform/x11window.h
             )
@@ -391,6 +397,8 @@ if(FRAMEWORK_GRAPHICS)
         ${CMAKE_CURRENT_LIST_DIR}/graphics/glutil.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/graphics.cpp
         ${CMAKE_CURRENT_LIST_DIR}/graphics/graphics.h
+        ${CMAKE_CURRENT_LIST_DIR}/graphics/graphicscontext.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/graphics/graphicscontext.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/hardwarebuffer.cpp
         ${CMAKE_CURRENT_LIST_DIR}/graphics/hardwarebuffer.h
         ${CMAKE_CURRENT_LIST_DIR}/graphics/image.cpp
